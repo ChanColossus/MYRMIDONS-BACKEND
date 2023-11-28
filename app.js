@@ -9,7 +9,9 @@ const portfolio = require('./routes/portfolio');
 
 const order = require('./routes/order');
 
-app.use(cors())
+app.use(cors({
+    origin: ['http://localhost:3000','https://myrmidons.onrender.com']
+}))
 app.use(express.json({limit:'50mb'}));
 app.use(express.urlencoded({limit: "50mb", extended: true }));
 app.use(cookieParser());
