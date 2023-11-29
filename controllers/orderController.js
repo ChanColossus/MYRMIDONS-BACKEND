@@ -122,7 +122,7 @@ exports.newOrder = async (req, res, next) => {
     paidAt: Date.now(),
     user: req.user._id,
   });
-  const confirmationLink = `https://myrmidons.onrender.com/api/v1/order/${order._id}/confirm`;
+  const confirmationLink = `https://myrmidons-api.onrender.com/api/v1/order/${order._id}/confirm`;
   sendEmail(order, confirmationLink);
   res.status(200).json({
     success: true,
